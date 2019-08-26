@@ -9,6 +9,7 @@ using AndroidApp.Adapter;
 using AndroidApp.Activities;
 using Android.Content;
 using Newtonsoft.Json;
+using AlertDialog = Android.App.AlertDialog;
 
 namespace AndroidApp
 {
@@ -40,7 +41,30 @@ namespace AndroidApp
             Initialize();
             adapter = new ContactListAdapter(contacts, this);
             listView.Adapter = adapter;
+            listView.ItemLongClick += ItemLongClicked;
         }
+        private void ItemLongClicked(object sender, AdapterView.ItemLongClickEventArgs args)
+        {
+            var contact = contacts[args.Position];
+
+            var alert = new AlertDialog.Builder(this).Create();
+
+            alert.SetTitle("Delete");
+            alert.SetMessage(string.Format("Are you sure to delete {0}?", contact.Name));
+
+            alert.SetButton("Yes", delegate
+            {
+                contacts.Remove(contact);
+                adapter.NotifyDataSetChanged();
+            });
+            alert.SetButton2("No", delegate
+            {
+
+            });
+
+            alert.Show();
+        }
+
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
             Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);

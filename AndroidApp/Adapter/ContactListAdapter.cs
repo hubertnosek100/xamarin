@@ -1,8 +1,10 @@
 ﻿using Android.App;
+using Android.Content;
 using Android.Views;
 using Android.Widget;
 using AndroidApp.Model;
 using Java.Lang;
+using System;
 using System.Collections.Generic;
 
 namespace AndroidApp.Adapter
@@ -38,6 +40,10 @@ namespace AndroidApp.Adapter
                 viewHolder.PhoneTextView = convertView.FindViewById<TextView>(Resource.Id.phoneNumber);
                 viewHolder.PhoneImageView = convertView.FindViewById<ImageView>(Resource.Id.phoneImage);
                 viewHolder.EmailImageView = convertView.FindViewById<ImageView>(Resource.Id.emailImage);
+
+                viewHolder.EmailImageView.Click += EmailImageViewClicked;
+                viewHolder.PhoneImageView.Click += PhoneImageViewClicked;
+
                 convertView.Tag = viewHolder;
             }
 
@@ -51,7 +57,28 @@ namespace AndroidApp.Adapter
             viewHolder.NameTextView.Text = contact.Name;
             viewHolder.PhoneTextView.Text = contact.PhoneNumber;
 
+            viewHolder.EmailImageView.Tag = position;
+            viewHolder.PhoneImageView.Tag = position;
+
             return convertView;
+        }
+        private void EmailImageViewClicked(object sender, EventArgs args)
+        {
+            var contact = contacts[(int)(sender as ImageView).Tag];
+
+            var intent = new Intent(Intent.ActionSend);
+            intent.SetType("plain/text");
+            intent.PutExtra(Intent.ExtraEmail, new string[] { contact.Email });
+            parent.StartActivity(intent);
+        }
+
+        private void PhoneImageViewClicked(object sender, EventArgs args)
+        {
+            var contact = contacts[(int)(sender as ImageView).Tag];
+
+            var intent = new Intent(Intent.ActionDial);
+            intent.SetData(Android.Net.Uri.Parse(string.Format("tel:{0}", contact.PhoneNumber)));
+            parent.StartActivity(intent);
         }
     }
 }
