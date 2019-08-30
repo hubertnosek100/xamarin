@@ -1,28 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "/Users/MacHubert/Projects/xamarin/iOSApp/iOSApp.csproj": {}
+    "C:\\Users\\ASoft2\\source\\repos\\AndroidApp\\iOSApp\\iOSApp.csproj": {}
   },
   "projects": {
-    "/Users/MacHubert/Projects/xamarin/iOSApp/iOSApp.csproj": {
+    "C:\\Users\\ASoft2\\source\\repos\\AndroidApp\\iOSApp\\iOSApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/MacHubert/Projects/xamarin/iOSApp/iOSApp.csproj",
+        "projectUniqueName": "C:\\Users\\ASoft2\\source\\repos\\AndroidApp\\iOSApp\\iOSApp.csproj",
         "projectName": "iOSApp",
-        "projectPath": "/Users/MacHubert/Projects/xamarin/iOSApp/iOSApp.csproj",
-        "packagesPath": "/Users/MacHubert/.nuget/packages/",
-        "outputPath": "/Users/MacHubert/Projects/xamarin/iOSApp/obj/",
+        "projectPath": "C:\\Users\\ASoft2\\source\\repos\\AndroidApp\\iOSApp\\iOSApp.csproj",
+        "packagesPath": "C:\\Users\\ASoft2\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ASoft2\\source\\repos\\AndroidApp\\iOSApp\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "/Users/MacHubert/.config/NuGet/NuGet.Config"
+          "C:\\Users\\ASoft2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "xamarinios10"
         ],
         "sources": {
-          "https://api.nuget.org/v3/index.json": {},
-          "https://www.myget.org/F/hydra-hub/api/v3/index.json": {}
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "xamarinios10": {

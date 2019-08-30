@@ -59,7 +59,7 @@ namespace AndroidApp
             });
             alert.SetButton2("No", delegate
             {
-
+                
             });
 
             alert.Show();

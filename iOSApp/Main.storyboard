@@ -21,8 +21,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="230" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
+                                <rect key="frame" x="160" y="127" width="93" height="30"/>
+                                <state key="normal" title="Add Contact"/>
+                                <connections>
+                                    <segue id="428" destination="226" kind="show"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="1741" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="198" width="374" height="678"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1742">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="68"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1742" id="1743">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="67.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint id="1534" firstItem="230" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX"/>
+                            <constraint id="1536" firstItem="230" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="57"/>
+                            <constraint id="1744" firstItem="1741" firstAttribute="top" secondItem="230" secondAttribute="bottom" constant="41"/>
+                            <constraint id="1745" firstItem="wfy-db-euE" firstAttribute="top" secondItem="1741" secondAttribute="bottom" constant="20"/>
+                            <constraint id="1747" firstItem="1741" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin"/>
+                            <constraint id="1748" firstItem="1741" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="J0k-Y3-aOX"/>
+                    <navigationItem key="navigationItem" id="J0k-Y3-aOX" title="Conntact List"/>
+                    <connections>
+                        <outlet property="AddButton" destination="230" id="name-outlet-230"/>
+                        <outlet property="ContactTableView" destination="1741" id="name-outlet-1741"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -44,5 +79,86 @@
             </objects>
             <point key="canvasLocation" x="-26" y="-122"/>
         </scene>
+        <scene sceneID="225">
+            <objects>
+                <viewController id="226" sceneMemberID="viewController" customClass="AddContactViewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="223"/>
+                        <viewControllerLayoutGuide type="bottom" id="224"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="227">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="2226" translatesAutoresizingMaskIntoConstraints="NO" image="contact_icon">
+                                <rect key="frame" x="147" y="130" width="120" height="120"/>
+                                <constraints>
+                                    <constraint id="2233" firstAttribute="width" constant="120"/>
+                                    <constraint id="2234" firstAttribute="height" constant="120"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2228" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Name">
+                                <rect key="frame" x="94" y="315" width="226" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="2249" firstAttribute="width" constant="226"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2229" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Email">
+                                <rect key="frame" x="94" y="365" width="226" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="2251" firstAttribute="width" constant="226"/>
+                                </constraints>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="2230" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Phone number">
+                                <rect key="frame" x="94" y="415" width="226" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <constraints>
+                                    <constraint id="2253" firstAttribute="width" constant="226"/>
+                                </constraints>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2231" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="134" y="482" width="145" height="30"/>
+                                <state key="normal" title="Add Contact"/>
+                                <constraints>
+                                    <constraint id="2246" firstAttribute="width" constant="145"/>
+                                </constraints>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint id="2232" firstItem="2226" firstAttribute="centerX" secondItem="227" secondAttribute="centerX"/>
+                            <constraint id="2235" firstItem="2226" firstAttribute="top" secondItem="223" secondAttribute="bottom" constant="60"/>
+                            <constraint id="2236" firstItem="2228" firstAttribute="top" secondItem="2226" secondAttribute="bottom" constant="65"/>
+                            <constraint id="2237" firstItem="2229" firstAttribute="top" secondItem="2228" secondAttribute="bottom" constant="20"/>
+                            <constraint id="2238" firstItem="2230" firstAttribute="top" secondItem="2229" secondAttribute="bottom" constant="20"/>
+                            <constraint id="2245" firstItem="2231" firstAttribute="top" secondItem="2230" secondAttribute="bottom" constant="37"/>
+                            <constraint id="2247" firstItem="2231" firstAttribute="centerX" secondItem="227" secondAttribute="centerX"/>
+                            <constraint id="2248" firstItem="2228" firstAttribute="centerX" secondItem="227" secondAttribute="centerX"/>
+                            <constraint id="2250" firstItem="2229" firstAttribute="centerX" secondItem="227" secondAttribute="centerX"/>
+                            <constraint id="2252" firstItem="2230" firstAttribute="centerX" secondItem="227" secondAttribute="centerX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="AddContact" destination="2231" id="name-outlet-2231"/>
+                        <outlet property="NameTextField" destination="2228" id="name-outlet-2228"/>
+                        <outlet property="EmailTextField" destination="2229" id="name-outlet-2229"/>
+                        <outlet property="PhoneTextField" destination="2230" id="name-outlet-2230"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="228" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1713" y="-85"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="contact_icon" width="72" height="72"/>
+    </resources>
 </document>

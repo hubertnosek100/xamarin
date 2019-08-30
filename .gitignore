@@ -1,3 +1,5 @@
 .vs
 AndroidApp/obj
 AndroidApp/bin
+iOSApp/bin
+iOSApp/obj
